@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: AngelFish
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Angel
+  MaxLifeTime: 1080
+  DelayGold: 15
+  GoldRevenue: 18
+  HungryAmount: 120
+  PriceFish: 300
+  ExperienceRevenue: 1
+  RequiredLevel: 0
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: -4843342382490492061, guid: 9776f001aca9e7242840757019e3ef05,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: bb9006f813d13ba4baf5f03804acbabf,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: e9f17f64d734b8d4bbbcf4242b92c0ef, type: 2}
+  PrefabFish: {fileID: 7305576432645579360, guid: bcd30c9f6857846498fdfc167f59edd1,
+    type: 3}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: Butterfly
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Butterfly
+  MaxLifeTime: 1296
+  DelayGold: 15
+  GoldRevenue: 21
+  HungryAmount: 144
+  PriceFish: 360
+  ExperienceRevenue: 1
+  RequiredLevel: 2
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: -2267055489093788108, guid: c204c2b66f76f504db60d72b20f69e50,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: d3437452a1c9f2c4bba3fad2b22144a0,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: fd2ed3472a031a941a9811d540a70dc4, type: 2}
+  PrefabFish: {fileID: 4218600536244390327, guid: 764cc118566cb0a4a8d5634357c9e8f9,
+    type: 3}

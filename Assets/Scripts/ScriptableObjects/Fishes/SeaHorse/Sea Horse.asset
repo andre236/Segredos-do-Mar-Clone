@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: Sea Horse
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Sea Horse
+  MaxLifeTime: 2240
+  DelayGold: 21
+  GoldRevenue: 28
+  HungryAmount: 220
+  PriceFish: 552
+  ExperienceRevenue: 2
+  RequiredLevel: 6
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: 4843110555359189713, guid: ebf55307ba451a746b69a8ea8365f3a7,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: 02bf25d349bbdf049a800af697ef4356,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: c17a6f194a568e1408443132ed5ce50e, type: 2}
+  PrefabFish: {fileID: 353546747371118089, guid: df90859f38f471c42930cc704d49d721,
+    type: 3}

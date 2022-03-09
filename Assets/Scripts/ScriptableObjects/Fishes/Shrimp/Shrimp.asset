@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: Shrimp
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Shrimp
+  MaxLifeTime: 2688
+  DelayGold: 21
+  GoldRevenue: 29
+  HungryAmount: 0
+  PriceFish: 660
+  ExperienceRevenue: 0
+  RequiredLevel: 6
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: -3326153164610363872, guid: ea0c50576fd05b14bb0048ab07ef419b,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: 29ccbd7d57f6f204b868f73b366ace4d,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: b12922e936c53a54091d720778ac2329, type: 2}
+  PrefabFish: {fileID: 8768511632235893032, guid: 43bf4c8b31080cb4a98bd15a8bd124f9,
+    type: 3}

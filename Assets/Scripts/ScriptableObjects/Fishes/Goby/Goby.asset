@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: Goby
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Goby
+  MaxLifeTime: 1866
+  DelayGold: 19
+  GoldRevenue: 25
+  HungryAmount: 200
+  PriceFish: 460
+  ExperienceRevenue: 1
+  RequiredLevel: 4
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: 5234408136246778783, guid: f816a850a4a7c4140844cca8aea24e2d,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: db74ff64de9f2da49bd383a3c729e688,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: e4ee1d0c73fd46b449d4ac29ad4effff, type: 2}
+  PrefabFish: {fileID: 5675038373413841022, guid: 67636cd26de334c4590b3a46f88bcf9a,
+    type: 3}

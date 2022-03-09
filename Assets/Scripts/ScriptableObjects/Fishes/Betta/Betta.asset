@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: Betta
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Betta
+  MaxLifeTime: 900
+  DelayGold: 15
+  GoldRevenue: 15
+  HungryAmount: 100
+  PriceFish: 250
+  ExperienceRevenue: 1
+  RequiredLevel: 0
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: -3271405751899804309, guid: 84fc3e4c3f78ece47b2c6560aad0d163,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: cc58a4308a91e3f4f847cfc3dd9820a0,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: cada77eb81f1183419eee30da7c23dd6, type: 2}
+  PrefabFish: {fileID: 3562178861884205928, guid: 2de8a5c059b97204d965c95441572733,
+    type: 3}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: MoorishIdol
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: MoorishIdol
+  MaxLifeTime: 3870
+  DelayGold: 23
+  GoldRevenue: 36
+  HungryAmount: 288
+  PriceFish: 1200
+  ExperienceRevenue: 0
+  RequiredLevel: 8
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: 4369379734826112075, guid: 6dba218af0c84554eb009d68829e6ff7,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: 7097fbd049784b544a9a204d4c0aff5b,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: aa5afc6b8299e8147a4d883948f292f1, type: 2}
+  PrefabFish: {fileID: 3438450658254117217, guid: 6df89f02ae4fd944d9f10c4f15893dd1,
+    type: 3}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: PeixePalhaco
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: "Peixe-Palha\xE7o"
+  MaxLifeTime: 1800
+  DelayGold: 18
+  HungryAmount: 50
+  PriceFish: 300
+  GoldRevenue: 28
+  ExperienceRevenue: 2
+  RequiredLevel: 0
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: -2563298257870577821, guid: 02e80bb063ba3074bb50594b28d10d0f,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: 425c4437fb090b64bbca7185f0c676b1,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: 33dc7a93515f36848a8caaba8f2ab708, type: 2}
+  PrefabFish: {fileID: 2161555607567991972, guid: 1e20d5d789edf6d4db03c20ea844f40b,
+    type: 3}

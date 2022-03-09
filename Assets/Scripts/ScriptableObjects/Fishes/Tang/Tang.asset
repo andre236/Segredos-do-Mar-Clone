@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79919a63ddd3772409cf1111c7aabb4c, type: 3}
+  m_Name: Tang
+  m_EditorClassIdentifier: 
+  <NameFish>k__BackingField: Tang
+  MaxLifeTime: 1125
+  DelayGold: 15
+  GoldRevenue: 22
+  HungryAmount: 144
+  PriceFish: 300
+  ExperienceRevenue: 2
+  RequiredLevel: 2
+  CurrentLifeStage: 0
+  CurrentHealthStatus: 0
+  SpriteFish: {fileID: -3905455124554264701, guid: e7629afd3146abf46b6b20b071729aac,
+    type: 3}
+  ControllerAnimeSprite: {fileID: 9100000, guid: d9d3b9d356ca13e4488f0860ec00944c,
+    type: 2}
+  ControllerAnimImage: {fileID: 9100000, guid: 5bad18639a960984c889499e7c025f2b, type: 2}
+  PrefabFish: {fileID: 8706343322915105307, guid: 4920f6cb60a9dc34494c6d9bdaff2e5e,
+    type: 3}
