@@ -24,7 +24,7 @@ namespace Entities
         private void CountdownLifeTime()
         {
             if (CurrentLifeTime < MaxLifeTime)
-                CurrentLifeTime+= 1;
+                CurrentLifeTime+= 90;
             else
                 CurrentLifeTime = MaxLifeTime;
 

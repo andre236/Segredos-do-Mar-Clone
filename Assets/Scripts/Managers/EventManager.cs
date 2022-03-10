@@ -96,7 +96,6 @@ namespace Manager
             Destroy(fishObject);
             _uiManager.OnFishesAquarium(FishList.Count.ToString(), _dataPlayerManager.MaxSizeAquarium.ToString());
             
-            Debug.Log("Removido");
         }
 
         internal void OnAddedFishList()

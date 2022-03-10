@@ -87,6 +87,10 @@ namespace Shop
                 // Spent of Gold
                 _dataPlayerManager.OnSpentGold(_fishSettings.PriceFish);
                 Instantiate(PrefabFish, GameObject.Find("FishesOnAquarium").transform);
+                if (PlayerPrefs.HasKey("BOUGHT_" + _fishSettings.NameFish))
+                    PlayerPrefs.SetInt("BOUGHT_" + _fishSettings.NameFish, PlayerPrefs.GetInt("BOUGHT_" + _fishSettings.NameFish) + 1);
+                else
+                    PlayerPrefs.SetInt("BOUGHT_" + _fishSettings.NameFish, 1);
                 AddedFishList?.Invoke();
             }
             else
