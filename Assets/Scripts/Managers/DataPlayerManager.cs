@@ -33,14 +33,14 @@ namespace Manager
 
         // -- Chest -- //
         public int MaxGoldChest { get; private set; }
-        public int NumberOfUpgradesChest { get; private set; } = 0;
+        public int NumberOfUpgradesChest { get; private set; }
 
         [field:SerializeField]
         public int[] CurrentMaxGoldUpgrade { get; private set; }
 
         // -- Aquarium -- //
         [field:SerializeField]
-        public int MaxSizeAquarium { get; private set; } = 3;
+        public int MaxSizeAquarium { get; private set; }
         public int NumberOfUpgradesAquarium { get; private set; } 
 
         public delegate void ShopProductHandler(int amount);
@@ -53,13 +53,7 @@ namespace Manager
 
         private void Start()
         {
-            CurrentLevel = 1;
-            CurrentExperience = 0;
-            ExperienceNextLevelUp = 100;
-            BankGold = 5000;
-
-
-
+            LoadPlayerData();
 
         }
 
@@ -260,7 +254,7 @@ namespace Manager
         public int OnBoughtChestExpansion(int newMaxGold)
         {
             NumberOfUpgradesChest++;
-            return CurrentMaxGoldUpgrade[NumberOfUpgradesChest];
+            return MaxGoldChest = CurrentMaxGoldUpgrade[NumberOfUpgradesChest];
         }
 
         public int OnUpdateMaxGoldChest(int maxGold)

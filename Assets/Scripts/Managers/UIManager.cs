@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Manager
@@ -6,16 +7,19 @@ namespace Manager
     public class UIManager : MonoBehaviour
     {
         // -- Stats -- //
-        private Image _currentExperienceBar;
-        private Text _expTXT;
-        private Text _levelTXT;
-        private Text _coinTXT;
-        private Text _goldPerMinuteTXT;
-        private Text _AquariumsTXT;
+        private Image _currentExperienceBarImage;
+        private Text _experienceText;
+        private Text _levelText;
+        private Text _coinText;
+        private Text _AquariumsText;
+        [SerializeField]
+        private GameObject _currentGoldBankGained;
 
         // -- Chest -- //
-        private Text _maxGoldChest;
-        private Text _currentGoldChest;
+        private Text _maxGoldChestText;
+        private Text _currentGoldChestText;
+        [SerializeField]
+        private GameObject _currentGoldGained;
 
         // -- Pages -- //
         [SerializeField]
@@ -28,9 +32,9 @@ namespace Manager
         // -- Food -- //
         [SerializeField]
         private GameObject _foodPage;
-        private Text _normalFoodTXT;
-        private Text _averageFoodTXT;
-        private Text _superFoodTXT;
+        private Text _normalFoodText;
+        private Text _averageFoodText;
+        private Text _superFoodText;
 
         private SpriteRenderer _normalFoodSprite;
         private SpriteRenderer _averageFoodSprite;
@@ -39,7 +43,7 @@ namespace Manager
         // -- Remedy -- //
         [SerializeField]
         private GameObject _remedyPage;
-        private Text _remedyTXT;
+        private Text _remedyText;
 
         private SpriteRenderer _remedySprite;
 
@@ -52,14 +56,14 @@ namespace Manager
         private void Awake()
         {
             // -- Experience -- //
-            _currentExperienceBar = GameObject.Find("CurrentExperienceBar").GetComponent<Image>();
-            _expTXT = GameObject.Find("experienceTXT").GetComponent<Text>();
-            _levelTXT = GameObject.Find("LevelTXT").GetComponent<Text>();
+            _currentExperienceBarImage = GameObject.Find("CurrentExperienceBar").GetComponent<Image>();
+            _experienceText = GameObject.Find("experienceTXT").GetComponent<Text>();
+            _levelText = GameObject.Find("LevelTXT").GetComponent<Text>();
 
 
-            _coinTXT = GameObject.Find("CoinTXT").GetComponent<Text>();
-            //_goldPerMinuteTXT = GameObject.Find("GoldPerMinuteTXT").GetComponent<Text>();
-            _AquariumsTXT = GameObject.FindGameObjectWithTag("Aquarium").GetComponentInChildren<Text>();
+            _coinText = GameObject.Find("CoinText").GetComponent<Text>();
+
+            _AquariumsText = GameObject.FindGameObjectWithTag("Aquarium").GetComponentInChildren<Text>();
 
             // -- Food's Sprites of Cursor -- //
             _normalFoodSprite = GameObject.Find("NormalFoodSprite").GetComponent<SpriteRenderer>();
@@ -77,10 +81,11 @@ namespace Manager
 
 
             // -- Chest -- //
-            _maxGoldChest = GameObject.Find("MaxGoldChestTXT").GetComponent<Text>();
-            _currentGoldChest = GameObject.Find("CurrentGoldTXT").GetComponent<Text>();
-            _maxGoldChest.gameObject.SetActive(false);
-            _currentGoldChest.gameObject.SetActive(false);
+            _maxGoldChestText = GameObject.Find("MaxGoldChestTXT").GetComponent<Text>();
+            _currentGoldChestText = GameObject.Find("CurrentGoldTXT").GetComponent<Text>();
+
+            _maxGoldChestText.gameObject.SetActive(false);
+            _currentGoldChestText.gameObject.SetActive(false);
         }
 
         private void Start()
@@ -134,31 +139,32 @@ namespace Manager
             }
 
 
-            _normalFoodTXT = GameObject.Find("AmountNormalFoodTXT").GetComponent<Text>();
-            _normalFoodTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalFood.ToString());
-            _averageFoodTXT = GameObject.Find("AmountAverageFoodTXT").GetComponent<Text>();
-            _averageFoodTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().AverageFood.ToString());
-            _superFoodTXT = GameObject.Find("AmountSuperFoodTXT").GetComponent<Text>();
-            _superFoodTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().SuperFood.ToString());
+            _normalFoodText = GameObject.Find("AmountNormalFoodTXT").GetComponent<Text>();
+            _normalFoodText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalFood.ToString());
+            _averageFoodText = GameObject.Find("AmountAverageFoodTXT").GetComponent<Text>();
+            _averageFoodText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().AverageFood.ToString());
+            _superFoodText = GameObject.Find("AmountSuperFoodTXT").GetComponent<Text>();
+            _superFoodText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().SuperFood.ToString());
 
         }
+
 
         public void OnUsedNormalFood()
         {
             _normalFoodSprite.GetComponent<Animator>().Play(0);
-            _normalFoodTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalFood.ToString());
+            _normalFoodText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalFood.ToString());
         }
 
         public void OnUsedAverageFood()
         {
             _averageFoodSprite.GetComponent<Animator>().Play(0);
-            _averageFoodTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().AverageFood.ToString());
+            _averageFoodText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().AverageFood.ToString());
         }
 
         public void OnUsedSuperFood()
         {
             _superFoodSprite.GetComponent<Animator>().Play(0);
-            _superFoodTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().SuperFood.ToString());
+            _superFoodText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().SuperFood.ToString());
         }
 
         public void OnNormalFoodSelected()
@@ -205,7 +211,7 @@ namespace Manager
             _averageFoodSprite.gameObject.SetActive(false);
             _normalFoodSprite.gameObject.SetActive(false);
         }
-        // -- Remedy -- //
+        // -- Remedy ----------------------------- //
         public void CheckActivedRemedy()
         {
             if (!_remedySprite.gameObject.activeSelf)
@@ -229,15 +235,15 @@ namespace Manager
                 return;
             }
 
-            _remedyTXT = GameObject.Find("RemedyAmountTXT").GetComponent<Text>();
-            _remedyTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalRemedy.ToString());
+            _remedyText = GameObject.Find("RemedyAmountTXT").GetComponent<Text>();
+            _remedyText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalRemedy.ToString());
 
         }
 
         public void OnUsedRemedy()
         {
             _remedySprite.GetComponent<Animator>().Play(0);
-            _remedyTXT.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalRemedy.ToString());
+            _remedyText.text = string.Concat("x", FindObjectOfType<DataPlayerManager>().NormalRemedy.ToString());
 
         }
 
@@ -266,33 +272,33 @@ namespace Manager
 
         public void OnFishesAquarium(string currentAquariumAmounText, string maxAquariumSize)
         {
-            _AquariumsTXT.text = string.Concat(currentAquariumAmounText , "/" , maxAquariumSize);
+            _AquariumsText.text = string.Concat(currentAquariumAmounText , "/" , maxAquariumSize);
         }
 
         public void OnPlayerGoldEarned(int amount)
         {
-            _coinTXT.text = amount.ToString();
+            _coinText.text = amount.ToString();
         }
 
         public void OnEarnedExperience(float exp, float nextLevelExp, int currentLevel)
         {
 
             if (exp != 0)
-                _currentExperienceBar.fillAmount = exp / nextLevelExp;
+                _currentExperienceBarImage.fillAmount = exp / nextLevelExp;
             else
-                _currentExperienceBar.fillAmount = 0;
+                _currentExperienceBarImage.fillAmount = 0;
 
-            _expTXT.text = string.Concat(Mathf.Abs(exp).ToString() , "/" , Mathf.Abs(nextLevelExp).ToString());
+            _experienceText.text = string.Concat(Mathf.Abs(exp).ToString() , "/" , Mathf.Abs(nextLevelExp).ToString());
 
-            _levelTXT.text = currentLevel.ToString();
+            _levelText.text = currentLevel.ToString();
         }
 
         public void OnShowCurrentChestGold(int maxChestGold, int currentChestGold, bool activeGameObject)
         {
-            _maxGoldChest.text = string.Concat("Capacity: " , maxChestGold.ToString());
-            _currentGoldChest.text = string.Concat("Gold: " , currentChestGold.ToString());
-            _maxGoldChest.gameObject.SetActive(activeGameObject);
-            _currentGoldChest.gameObject.SetActive(activeGameObject);
+            _maxGoldChestText.text = string.Concat("Capacity: " , maxChestGold.ToString());
+            _currentGoldChestText.text = string.Concat("Gold: " , currentChestGold.ToString());
+            _maxGoldChestText.gameObject.SetActive(activeGameObject);
+            _currentGoldChestText.gameObject.SetActive(activeGameObject);
         }
 
         // -- Pages -- //
@@ -316,6 +322,21 @@ namespace Manager
                     _pages[i].SetActive(false);
                 }
             }
+        }
+
+        // ------------------ Chest ----------------- //
+
+        internal void OnGeneratedGold(int amount)
+        {
+            _currentGoldGained.GetComponent<Text>().text = string.Concat("+", amount);
+            Instantiate(_currentGoldGained, GameObject.Find("GoldChest").transform.Find("Canvas").transform);
+
+        }
+
+        internal void OnGoldCollected(int amount)
+        {
+            _currentGoldBankGained.GetComponent<Text>().text = string.Concat("+", amount);
+            Instantiate(_currentGoldBankGained, GameObject.Find("coinIMG").transform);
         }
 
     }

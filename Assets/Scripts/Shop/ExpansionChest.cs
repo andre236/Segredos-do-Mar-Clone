@@ -38,7 +38,7 @@ namespace Shop
         private void OnEnable()
         {
             _currentMaxGoldTXT.text = _dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest].ToString();
-            _nextMaxGoldTXT.text = _dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest + 1].ToString();
+            _nextMaxGoldTXT.text = _dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest+1].ToString();
             _priceTXT.text = _priceEachExpansionChest[_dataPlayerManager.NumberOfUpgradesChest].ToString();
 
         }
@@ -50,7 +50,9 @@ namespace Shop
             if (_dataPlayerManager.BankGold >= _priceEachExpansionChest[_dataPlayerManager.NumberOfUpgradesChest] && _dataPlayerManager.NumberOfUpgradesChest < lenghtChest)
             {
                 _dataPlayerManager.OnSpentGold(_priceEachExpansionChest[_dataPlayerManager.NumberOfUpgradesChest]);
-                BoughtChestExpansion?.Invoke(_dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest]);
+
+                BoughtChestExpansion?.Invoke(_dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest +1]);
+                
                 _priceTXT.text = _priceEachExpansionChest[_dataPlayerManager.NumberOfUpgradesChest].ToString();
                 _currentMaxGoldTXT.text = _dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest].ToString();
                 _nextMaxGoldTXT.text = _dataPlayerManager.CurrentMaxGoldUpgrade[_dataPlayerManager.NumberOfUpgradesChest + 1].ToString();

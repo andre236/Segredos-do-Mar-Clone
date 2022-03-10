@@ -16,6 +16,7 @@ namespace Shop
         private Text _productTitleTXT;
         private Text _productPriceTXT;
         private Image _productImage;
+        private AudioSource _buySound;
         private Animator _animatorProduct;
 
         private EventManager _eventManager;
@@ -35,6 +36,7 @@ namespace Shop
             _productTitleTXT = transform.Find("ProductTitleTXT").GetComponent<Text>();
             _productPriceTXT = transform.Find("ProductPriceTXT").GetComponent<Text>();
             _productImage = transform.Find("ProductSprite").GetComponent<Image>();
+            _buySound = transform.Find("BuySound").GetComponent<AudioSource>();
             BoughtItem += _dataPlayerManager.OnBoughtItem;
 
         }
@@ -54,6 +56,7 @@ namespace Shop
             if (_dataPlayerManager.BankGold >= _productObject.Price)
             {
                 // Spent of Gold
+                _buySound.Play();
                 _dataPlayerManager.OnSpentGold(_productObject.Price);
                 BoughtItem?.Invoke(_productObject.Name, _productObject.Amount);
             }

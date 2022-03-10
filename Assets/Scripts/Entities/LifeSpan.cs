@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace Entities
@@ -24,7 +23,7 @@ namespace Entities
         private void CountdownLifeTime()
         {
             if (CurrentLifeTime < MaxLifeTime)
-                CurrentLifeTime+= 90;
+                CurrentLifeTime+= 1;
             else
                 CurrentLifeTime = MaxLifeTime;
 
@@ -33,11 +32,11 @@ namespace Entities
 
         private void Age()
         {
-            float yuongStage = Mathf.Abs(MaxLifeTime / 2);
+            float youngStage = Mathf.Abs(MaxLifeTime / 2);
             float adultStage = MaxLifeTime * 0.75f;
             float oldStage = MaxLifeTime;
 
-            if (CurrentLifeTime >= yuongStage && CurrentLifeTime < adultStage)
+            if (CurrentLifeTime >= youngStage && CurrentLifeTime < adultStage)
                 _fish.CurrentLifeStage = enums.LifeStage.Young;
             else if (CurrentLifeTime >= adultStage && CurrentLifeTime < oldStage)
                 _fish.CurrentLifeStage = enums.LifeStage.Adult;

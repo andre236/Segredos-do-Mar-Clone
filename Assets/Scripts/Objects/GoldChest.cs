@@ -1,22 +1,23 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Objects
 {
     public class GoldChest : MonoBehaviour
     {
-        private AudioSource _openingChestSFX, _closingChestSFX, _collectingSFX;
+        private AudioSource _openingChestSound;
+        private AudioSource _collectingGoldSound;
+        private AudioSource _generatingGoldSound;
 
         private Animator _chestAnimator;
-        
+
         [field: SerializeField]
         public int CurrentChestGold { get; private set; } = 0;
         [field: SerializeField]
         public int MaxChestGold { get; private set; }
 
-
         public delegate void GoldChestFilledHandler(int amountGold);
-
         public event GoldChestFilledHandler GoldCollected;
 
         public Action<int, int, bool> ShowCurrentChestGold { get; internal set; }
@@ -25,9 +26,9 @@ namespace Objects
         {
             _chestAnimator = GetComponent<Animator>();
 
-            _openingChestSFX = transform.Find("OpeningSFX").GetComponent<AudioSource>();
-            _closingChestSFX = transform.Find("ClosingSFX").GetComponent<AudioSource>();
-            _collectingSFX = transform.Find("CollectingSFX").GetComponent<AudioSource>();
+            _openingChestSound = transform.Find("OpeningSound").GetComponent<AudioSource>();
+            _collectingGoldSound = transform.Find("CollectingSound").GetComponent<AudioSource>();
+            _generatingGoldSound = transform.Find("GeneratedGold").GetComponent<AudioSource>();
         }
 
 
@@ -42,8 +43,7 @@ namespace Objects
             {
                 GoldCollected?.Invoke(CurrentChestGold);
                 CurrentChestGold -= MaxChestGold;
-                if(!_collectingSFX.isPlaying)
-                _collectingSFX.Play();
+                _collectingGoldSound.Play();
                 AnimateChest();
             }
         }
@@ -57,8 +57,8 @@ namespace Objects
         {
             if (CurrentChestGold >= MaxChestGold)
             {
-                if(!_openingChestSFX.isPlaying && !_chestAnimator.GetBool("IsFull"))
-                _openingChestSFX.Play();
+                if (!_openingChestSound.isPlaying && !_chestAnimator.GetBool("IsFull"))
+                    _openingChestSound.Play();
                 _chestAnimator.SetBool("IsFull", true);
             }
             else
@@ -81,6 +81,7 @@ namespace Objects
                 CurrentChestGold += amount;
             }
             AnimateChest();
+            _generatingGoldSound.Play();
         }
 
         internal void OnStartedChestGold(int maxChestGold)

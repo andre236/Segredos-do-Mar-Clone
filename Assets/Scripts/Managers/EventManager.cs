@@ -38,7 +38,8 @@ namespace Manager
 
             // -- Data Player -- //
             _dataPlayerManager.PlayerGoldEarned += _uiManager.OnPlayerGoldEarned;
-            _goldChest.GoldCollected += _dataPlayerManager.OnCollectGold;
+
+            _dataPlayerManager.StartedMaxGoldChest += _goldChest.OnStartedChestGold;
 
             // -- Selecting Foods -- //
             _itemsManager.NormalFoodSelected += _uiManager.OnNormalFoodSelected;
@@ -67,7 +68,8 @@ namespace Manager
             _uiManager.OnEarnedExperience(_dataPlayerManager.CurrentExperience, _dataPlayerManager.ExperienceNextLevelUp, _dataPlayerManager.CurrentLevel);
 
             // -- Chest -- //
-            _dataPlayerManager.StartedMaxGoldChest += _goldChest.OnStartedChestGold;
+            _goldChest.GoldCollected += _dataPlayerManager.OnCollectGold;
+            _goldChest.GoldCollected += _uiManager.OnGoldCollected;
             _goldChest.ShowCurrentChestGold += _uiManager.OnShowCurrentChestGold;
 
         }
@@ -114,6 +116,8 @@ namespace Manager
                     f.GetComponent<FishInteraction>().RemovedFromList -= _achievementManager.OnRemovedList_BreedAchievement;
 
                     f.GetComponent<StatusGenerate>().GeneratedGold += _goldChest.OnGeneratedGold;
+                    f.GetComponent<StatusGenerate>().GeneratedGold += _uiManager.OnGeneratedGold;
+
                     f.GetComponent<StatusGenerate>().GeneratedExperience += _dataPlayerManager.OnGeneratedExperience;
                     f.GetComponent<FishInteraction>().RemovedFromList += OnRemovedFromFishList;
                     f.GetComponent<FishInteraction>().RemovedFromList += _achievementManager.OnRemovedList_BreedAchievement;

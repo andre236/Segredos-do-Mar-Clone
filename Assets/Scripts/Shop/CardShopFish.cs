@@ -20,6 +20,8 @@ namespace Shop
         private Text _productTitleTXT;
         private Text _productPriceTXT;
 
+        private AudioSource _buySound;
+        private AudioSource _PutFish;
         private Image _productImage;
         private Animator _animatorFish;
         private Button _buyButton;
@@ -47,6 +49,8 @@ namespace Shop
             _productImage = transform.Find("ProductSprite").GetComponent<Image>();
             _animatorFish = transform.Find("ProductSprite").GetComponent<Animator>();
             _buyButton = transform.Find("BuyButton").GetComponent<Button>();
+            _buySound = transform.Find("BuySound").GetComponent<AudioSource>();
+            _PutFish = transform.Find("PuttingFishSound").GetComponent<AudioSource>();
             AddedFishList += _eventManager.OnAddedFishList;
         }
 
@@ -87,10 +91,9 @@ namespace Shop
                 // Spent of Gold
                 _dataPlayerManager.OnSpentGold(_fishSettings.PriceFish);
                 Instantiate(PrefabFish, GameObject.Find("FishesOnAquarium").transform);
-                if (PlayerPrefs.HasKey("BOUGHT_" + _fishSettings.NameFish))
-                    PlayerPrefs.SetInt("BOUGHT_" + _fishSettings.NameFish, PlayerPrefs.GetInt("BOUGHT_" + _fishSettings.NameFish) + 1);
-                else
-                    PlayerPrefs.SetInt("BOUGHT_" + _fishSettings.NameFish, 1);
+                _buySound.Play();
+                _PutFish.Play();
+                AchievementManager.Instance.OnBoughtFish(_fishSettings.PrefabFish);
                 AddedFishList?.Invoke();
             }
             else
