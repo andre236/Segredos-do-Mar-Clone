@@ -577,7 +577,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "N\xEDvel necess\xE1rio:"
+  m_Text: RequiredLevel
 --- !u!114 &1647466971934005464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 2618999292123555678}
   - component: {fileID: 8282210590248215032}
   m_Layer: 5
-  m_Name: LifeSpanTXT
+  m_Name: LifespanTXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,7 +672,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Longevidade:'
+  m_Text: 'Lifespan:'
 --- !u!114 &8282210590248215032
 MonoBehaviour:
   m_ObjectHideFlags: 0

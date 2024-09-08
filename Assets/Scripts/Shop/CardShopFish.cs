@@ -39,7 +39,7 @@ namespace Shop
             _dataPlayerManager = FindObjectOfType<DataPlayerManager>();
             _eventManager = FindObjectOfType<EventManager>();
             _popUp = transform.Find("PopUp").gameObject;
-            _lifeTimeTXT = _popUp.transform.Find("LifeSpanTXT").GetComponent<Text>();
+            _lifeTimeTXT = _popUp.transform.Find("LifespanTXT").GetComponent<Text>();
             _nameFishTXT = _popUp.transform.Find("NameFishTXT").GetComponent<Text>();
             _revenueTXT = _popUp.transform.Find("RevenueTXT").GetComponent<Text>();
             _requiredLevelTXT = transform.Find("PopUp").transform.Find("RequiredLevelTXT").GetComponent<Text>();
@@ -106,12 +106,10 @@ namespace Shop
         {
             _popUp.transform.SetParent(GameObject.Find("CurrentCardPopUp").transform);
             _popUp.SetActive(true);
-
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-
             _popUp.transform.SetParent(gameObject.transform);
             _popUp.SetActive(false);
 
